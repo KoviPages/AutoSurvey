@@ -5,20 +5,6 @@
       <script type = "text/javascript">
          <!--
             function DateWriter() {
-            var el = document.body;
-            // Supports most browsers and their versions.
-            var requestMethod = el.requestFullScreen || el.webkitRequestFullScreen 
-             || el.mozRequestFullScreen || el.msRequestFullScreen;
-            if (requestMethod) {
-             // Native full screen.
-            requestMethod.call(el);
-            } else if (typeof window.ActiveXObject !== "undefined") {
-            // Older IE.
-            var wscript = new ActiveXObject("WScript.Shell");
-               if (wscript !== null) {
-                wscript.SendKeys("{F11}");
-               }
-            }
              n =  new Date();
              var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
              month = months[n.getMonth()]; //Date.getMonth() returns a number x. m will become the xth element of "months" array.
@@ -34,6 +20,9 @@
    </head>
    
    <body onload="DateWriter()">
+      <style>
+      html, body {height: 100%;}
+      </style>
       
   <!-- The Below HTML is lifted from the result page at end of the covid survey, with my name. 
 The source of the smiley face was originally https://yeshiva.co1.qualtrics.com/CP/Graphic.php?IM=IM_eIDTqf2bM8hWaW1
