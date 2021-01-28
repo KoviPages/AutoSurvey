@@ -7,7 +7,7 @@
             function DateWriter() {
              n =  new Date();
              var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-             month = months[d.getMonth()]; //Date.getMonth() returns a number x. m will become the xth element of "months" array.
+             month = months[n.getMonth()]; //Date.getMonth() returns a number x. m will become the xth element of "months" array.
              var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
              day = days[n.getDay()];
              date = n.getDate();
