@@ -6,10 +6,13 @@
          <!--
             function DateWriter() {
              n =  new Date();
-             y = n.getFullYear();
-             m = n.getMonth() + 1;
-             d = n.getDate();
-             document.getElementById("dateinfo").innerHTML = m + "/" + d + "/" + y;
+             var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+             month = months[d.getMonth()]; //Date.getMonth() returns a number x. m will become the xth element of "months" array.
+             var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+             day = days[d.getDay()];
+             date = n.getDate();
+             document.getElementById("dateinfo").innerHTML = day + ", " + month +" " + date + "th" + "<br>5:00 AM" ; 
+            //Put it all together. get something like Wednesday, January 27th<br>5:00 AM
                //Wednesday, January 27th<br>5:00 AM
             }
          //-->
@@ -18,7 +21,12 @@
    
    <body onload="DateWriter()">
       
-      
+  <!-- The Below HTML is lifted from the result page at end of the covid survey, with my name. 
+The source of the smiley face was originally https://yeshiva.co1.qualtrics.com/CP/Graphic.php?IM=IM_eIDTqf2bM8hWaW1
+I have saved it in my GitHub "AutoSurvey" repository in the directory of this index.html page, under the name YUSurveySmiley.php
+and used that as the image source, in case the URL changes. The span that used to be filled with the current date and time has been emptied 
+and I have added an id, dateinfo. On load, the DateWriter will run and fill it in.
+-->
   <div style="text-align: center;"><span style="color: rgb(39, 174, 96); outline: rgb(0, 0, 0) solid 0px;" tabindex="-1">Welcome to campus!<br>
 Please show the this screen to Campus Security upon entering any Yeshiva University building</span><br>
 <img height="252" src="YUSurveySmiley.php" style="width: 249px; height: 252px;" width="249" data-image-state="ready"><br>
